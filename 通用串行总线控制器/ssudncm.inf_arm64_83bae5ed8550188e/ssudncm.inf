@@ -1,0 +1,251 @@
+;***************************************************************************************
+;
+; Name: ssudncm.inf  
+;
+; Function:  Install SAMSUNG Mobile USB NCM Function Driver on XP/VISTA/Win7
+;
+; Copyright (c) DEVGURU Co., LTD. (www.devguru.co.kr)
+;
+;***************************************************************************************
+
+
+[Version]
+Signature   = "$Windows NT$"
+Class       = USB
+ClassGuid   = {36FC9E60-c465-11cf-8056-444553540000}
+Provider    = %Provider%
+DriverVer=07/08/2019,2.16.9.0
+CatalogFile = ssudncm.cat
+
+[ControlFlags]
+ExcludeFromSelect = *
+
+[SourceDisksNames.x86]
+1 = %DiskString%,,,\i386
+
+[SourceDisksNames.amd64]
+1 = %DiskString%,,,\amd64
+
+[SourceDisksNames.arm64]
+1 = %DiskString%,,,\arm64
+
+[SourceDisksFiles.x86]
+; filename = diskid[,[ subdir][, size]]
+ssudncm.sys = 1
+WdfCoInstaller01007.dll = 1
+
+[SourceDisksFiles.amd64]
+; filename = diskid[,[ subdir][, size]]
+ssudncm.sys = 1
+WdfCoInstaller01007.dll = 1
+
+[SourceDisksFiles.arm64]
+; filename = diskid[,[ subdir][, size]]
+ssudncm.sys = 1
+
+[DestinationDirs]
+DefaultDestDir = 12
+CoInstaller_CopyFiles = 11
+
+; ================= Device section =====================
+
+[Manufacturer]
+%ssud%=ssud,NTx86, NTx86.6.1, NTamd64, NTamd64.6.1, NTarm64
+
+[ssud]
+%USB\SAMSUNG_MOBILE&NcmFunc.Desc%  = ssud.Install.CoInst, USB\VID_04E8&PID_685D&NCMNET
+%USB\SAMSUNG_MOBILE&NcmFunc.Desc%  = ssud.Install.CoInst, USB\VID_04E8&PID_685E&NCMNET
+%USB\SAMSUNG_MOBILE&NcmFunc.Desc%  = ssud.Install.CoInst, USB\VID_04E8&PID_6860&NCMNET
+%USB\SAMSUNG_MOBILE&NcmFunc.Desc%  = ssud.Install.CoInst, USB\VID_04E8&PID_6861&NCMNET
+%USB\SAMSUNG_MOBILE&NcmFunc.Desc%  = ssud.Install.CoInst, USB\VID_04E8&PID_6862&NCMNET
+%USB\SAMSUNG_MOBILE&NcmFunc.Desc%  = ssud.Install.CoInst, USB\VID_04E8&PID_6864&NCMNET
+%USB\SAMSUNG_MOBILE&NcmFunc.Desc%  = ssud.Install.CoInst, USB\VID_04E8&PID_6866&NCMNET
+%USB\SAMSUNG_MOBILE&NcmFunc.Desc%  = ssud.Install.CoInst, USB\VID_04E8&PID_6867&NCMNET
+%USB\SAMSUNG_MOBILE&NcmFunc.Desc%  = ssud.Install.CoInst, USB\VID_04E8&PID_686A&NCMNET
+%USB\SAMSUNG_MOBILE&NcmFunc.Desc%  = ssud.Install.CoInst, USB\VID_04E8&PID_686B&NCMNET
+%USB\SAMSUNG_MOBILE&NcmFunc.Desc%  = ssud.Install.CoInst, USB\VID_04E8&PID_686C&NCMNET
+%USB\SAMSUNG_MOBILE&NcmFunc.Desc%  = ssud.Install.CoInst, USB\VID_04E8&PID_A50B&NCMNET
+%USB\SAMSUNG_MOBILE&NcmFunc.Desc%  = ssud.Install.CoInst, USB\SAMSUNG_MOBILE&NCMNET
+
+[ssud.NTx86]
+%USB\SAMSUNG_MOBILE&NcmFunc.Desc%  = ssud.Install.CoInst, USB\VID_04E8&PID_685D&NCMNET
+%USB\SAMSUNG_MOBILE&NcmFunc.Desc%  = ssud.Install.CoInst, USB\VID_04E8&PID_685E&NCMNET
+%USB\SAMSUNG_MOBILE&NcmFunc.Desc%  = ssud.Install.CoInst, USB\VID_04E8&PID_6860&NCMNET
+%USB\SAMSUNG_MOBILE&NcmFunc.Desc%  = ssud.Install.CoInst, USB\VID_04E8&PID_6861&NCMNET
+%USB\SAMSUNG_MOBILE&NcmFunc.Desc%  = ssud.Install.CoInst, USB\VID_04E8&PID_6862&NCMNET
+%USB\SAMSUNG_MOBILE&NcmFunc.Desc%  = ssud.Install.CoInst, USB\VID_04E8&PID_6864&NCMNET
+%USB\SAMSUNG_MOBILE&NcmFunc.Desc%  = ssud.Install.CoInst, USB\VID_04E8&PID_6866&NCMNET
+%USB\SAMSUNG_MOBILE&NcmFunc.Desc%  = ssud.Install.CoInst, USB\VID_04E8&PID_6867&NCMNET
+%USB\SAMSUNG_MOBILE&NcmFunc.Desc%  = ssud.Install.CoInst, USB\VID_04E8&PID_686A&NCMNET
+%USB\SAMSUNG_MOBILE&NcmFunc.Desc%  = ssud.Install.CoInst, USB\VID_04E8&PID_686B&NCMNET
+%USB\SAMSUNG_MOBILE&NcmFunc.Desc%  = ssud.Install.CoInst, USB\VID_04E8&PID_686C&NCMNET
+%USB\SAMSUNG_MOBILE&NcmFunc.Desc%  = ssud.Install.CoInst, USB\VID_04E8&PID_A50B&NCMNET
+%USB\SAMSUNG_MOBILE&NcmFunc.Desc%  = ssud.Install.CoInst, USB\SAMSUNG_MOBILE&NCMNET
+
+[ssud.NTx86.6.1]
+%USB\SAMSUNG_MOBILE&NcmFunc.Desc%  = ssud.Install, USB\VID_04E8&PID_685D&NCMNET
+%USB\SAMSUNG_MOBILE&NcmFunc.Desc%  = ssud.Install, USB\VID_04E8&PID_685E&NCMNET
+%USB\SAMSUNG_MOBILE&NcmFunc.Desc%  = ssud.Install, USB\VID_04E8&PID_6860&NCMNET
+%USB\SAMSUNG_MOBILE&NcmFunc.Desc%  = ssud.Install, USB\VID_04E8&PID_6861&NCMNET
+%USB\SAMSUNG_MOBILE&NcmFunc.Desc%  = ssud.Install, USB\VID_04E8&PID_6862&NCMNET
+%USB\SAMSUNG_MOBILE&NcmFunc.Desc%  = ssud.Install, USB\VID_04E8&PID_6864&NCMNET
+%USB\SAMSUNG_MOBILE&NcmFunc.Desc%  = ssud.Install, USB\VID_04E8&PID_6866&NCMNET
+%USB\SAMSUNG_MOBILE&NcmFunc.Desc%  = ssud.Install, USB\VID_04E8&PID_6867&NCMNET
+%USB\SAMSUNG_MOBILE&NcmFunc.Desc%  = ssud.Install, USB\VID_04E8&PID_686A&NCMNET
+%USB\SAMSUNG_MOBILE&NcmFunc.Desc%  = ssud.Install, USB\VID_04E8&PID_686B&NCMNET
+%USB\SAMSUNG_MOBILE&NcmFunc.Desc%  = ssud.Install, USB\VID_04E8&PID_686C&NCMNET
+%USB\SAMSUNG_MOBILE&NcmFunc.Desc%  = ssud.Install, USB\VID_04E8&PID_A50B&NCMNET
+%USB\SAMSUNG_MOBILE&NcmFunc.Desc%  = ssud.Install, USB\SAMSUNG_MOBILE&NCMNET
+
+[ssud.NTamd64]
+%USB\SAMSUNG_MOBILE&NcmFunc.Desc%  = ssud.Install.CoInst, USB\VID_04E8&PID_685D&NCMNET
+%USB\SAMSUNG_MOBILE&NcmFunc.Desc%  = ssud.Install.CoInst, USB\VID_04E8&PID_685E&NCMNET
+%USB\SAMSUNG_MOBILE&NcmFunc.Desc%  = ssud.Install.CoInst, USB\VID_04E8&PID_6860&NCMNET
+%USB\SAMSUNG_MOBILE&NcmFunc.Desc%  = ssud.Install.CoInst, USB\VID_04E8&PID_6861&NCMNET
+%USB\SAMSUNG_MOBILE&NcmFunc.Desc%  = ssud.Install.CoInst, USB\VID_04E8&PID_6862&NCMNET
+%USB\SAMSUNG_MOBILE&NcmFunc.Desc%  = ssud.Install.CoInst, USB\VID_04E8&PID_6864&NCMNET
+%USB\SAMSUNG_MOBILE&NcmFunc.Desc%  = ssud.Install.CoInst, USB\VID_04E8&PID_6866&NCMNET
+%USB\SAMSUNG_MOBILE&NcmFunc.Desc%  = ssud.Install.CoInst, USB\VID_04E8&PID_6867&NCMNET
+%USB\SAMSUNG_MOBILE&NcmFunc.Desc%  = ssud.Install.CoInst, USB\VID_04E8&PID_686A&NCMNET
+%USB\SAMSUNG_MOBILE&NcmFunc.Desc%  = ssud.Install.CoInst, USB\VID_04E8&PID_686B&NCMNET
+%USB\SAMSUNG_MOBILE&NcmFunc.Desc%  = ssud.Install.CoInst, USB\VID_04E8&PID_686C&NCMNET
+%USB\SAMSUNG_MOBILE&NcmFunc.Desc%  = ssud.Install.CoInst, USB\VID_04E8&PID_A50B&NCMNET
+%USB\SAMSUNG_MOBILE&NcmFunc.Desc%  = ssud.Install.CoInst, USB\SAMSUNG_MOBILE&NCMNET
+
+[ssud.NTamd64.6.1]
+%USB\SAMSUNG_MOBILE&NcmFunc.Desc%  = ssud.Install, USB\VID_04E8&PID_685D&NCMNET
+%USB\SAMSUNG_MOBILE&NcmFunc.Desc%  = ssud.Install, USB\VID_04E8&PID_685E&NCMNET
+%USB\SAMSUNG_MOBILE&NcmFunc.Desc%  = ssud.Install, USB\VID_04E8&PID_6860&NCMNET
+%USB\SAMSUNG_MOBILE&NcmFunc.Desc%  = ssud.Install, USB\VID_04E8&PID_6861&NCMNET
+%USB\SAMSUNG_MOBILE&NcmFunc.Desc%  = ssud.Install, USB\VID_04E8&PID_6862&NCMNET
+%USB\SAMSUNG_MOBILE&NcmFunc.Desc%  = ssud.Install, USB\VID_04E8&PID_6864&NCMNET
+%USB\SAMSUNG_MOBILE&NcmFunc.Desc%  = ssud.Install, USB\VID_04E8&PID_6866&NCMNET
+%USB\SAMSUNG_MOBILE&NcmFunc.Desc%  = ssud.Install, USB\VID_04E8&PID_6867&NCMNET
+%USB\SAMSUNG_MOBILE&NcmFunc.Desc%  = ssud.Install, USB\VID_04E8&PID_686A&NCMNET
+%USB\SAMSUNG_MOBILE&NcmFunc.Desc%  = ssud.Install, USB\VID_04E8&PID_686B&NCMNET
+%USB\SAMSUNG_MOBILE&NcmFunc.Desc%  = ssud.Install, USB\VID_04E8&PID_686C&NCMNET
+%USB\SAMSUNG_MOBILE&NcmFunc.Desc%  = ssud.Install, USB\VID_04E8&PID_A50B&NCMNET
+%USB\SAMSUNG_MOBILE&NcmFunc.Desc%  = ssud.Install, USB\SAMSUNG_MOBILE&NCMNET
+
+[ssud.NTarm64]
+%USB\SAMSUNG_MOBILE&NcmFunc.Desc%  = ssud.Install, USB\VID_04E8&PID_685D&NCMNET
+%USB\SAMSUNG_MOBILE&NcmFunc.Desc%  = ssud.Install, USB\VID_04E8&PID_685E&NCMNET
+%USB\SAMSUNG_MOBILE&NcmFunc.Desc%  = ssud.Install, USB\VID_04E8&PID_6860&NCMNET
+%USB\SAMSUNG_MOBILE&NcmFunc.Desc%  = ssud.Install, USB\VID_04E8&PID_6861&NCMNET
+%USB\SAMSUNG_MOBILE&NcmFunc.Desc%  = ssud.Install, USB\VID_04E8&PID_6862&NCMNET
+%USB\SAMSUNG_MOBILE&NcmFunc.Desc%  = ssud.Install, USB\VID_04E8&PID_6864&NCMNET
+%USB\SAMSUNG_MOBILE&NcmFunc.Desc%  = ssud.Install, USB\VID_04E8&PID_6866&NCMNET
+%USB\SAMSUNG_MOBILE&NcmFunc.Desc%  = ssud.Install, USB\VID_04E8&PID_6867&NCMNET
+%USB\SAMSUNG_MOBILE&NcmFunc.Desc%  = ssud.Install, USB\VID_04E8&PID_686A&NCMNET
+%USB\SAMSUNG_MOBILE&NcmFunc.Desc%  = ssud.Install, USB\VID_04E8&PID_686B&NCMNET
+%USB\SAMSUNG_MOBILE&NcmFunc.Desc%  = ssud.Install, USB\VID_04E8&PID_686C&NCMNET
+%USB\SAMSUNG_MOBILE&NcmFunc.Desc%  = ssud.Install, USB\VID_04E8&PID_A50B&NCMNET
+%USB\SAMSUNG_MOBILE&NcmFunc.Desc%  = ssud.Install, USB\SAMSUNG_MOBILE&NCMNET
+
+[ssud.Install.NT]
+AddReg          = ssud.Reg
+CopyFiles		= CopyFiles
+
+[ssud.Install.NT.Services]
+AddService = ssudncm, 2, ssud.AddService, ssud.EventLog
+
+[ssud.Install.CoInst.NT]
+AddReg          = ssud.Reg
+CopyFiles		= CopyFiles
+
+[ssud.Install.CoInst.NT.Services]
+AddService = ssudncm, 2, ssud.AddService, ssud.EventLog
+
+[ssud.Reg]
+
+[CopyFiles]
+ssudncm.sys
+
+[ssud.AddService]
+DisplayName    = %ssud.Service.Name%
+Description	   = %ssud.Service.Desc%
+ServiceType    = 1                  ; SERVICE_KERNEL_DRIVER
+StartType      = 3                  ; SERVICE_DEMAND_START
+ErrorControl   = 1                  ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %12%\ssudncm.sys
+AddReg         = TextModeFlags.Reg
+LoadOrderGroup = Base
+
+[ssud.EventLog]
+AddReg = ssud.AddEventLog.Reg
+
+[ssud.AddEventLog.Reg]
+
+[TextModeFlags.Reg]
+HKR,           , TextModeFlags                , 0x00010001, 0x0001
+HKR, Parameters, BulkReadDataCollectionSize   , 0x00010001, 0x03E8 ; 1000
+HKR, Parameters, BulkReadRequestPoolSize      , 0x00010001, 0x0004 ; 4
+HKR, Parameters, BulkWriteRequestPoolSize     , 0x00010001, 0x0014 ; 20
+HKR, Parameters, NcmNtbInputBufferSize        , 0x00010001, 0x8000 ; 32K
+HKR, Parameters, BulkWriteSendSequential      , 0x00010001, 0x0000 ; send async(0), send sync(1)
+HKR, Parameters, BulkWriteRequestCompleteLevel, 0x00010001, 0x0001 ; complete with parent(0), complete after packed(1), complete received(2)
+HKR, Parameters, NcmNtbOutputBufferSize       , 0x00010001, 0x0000 ; 0K
+HKR, Parameters, NcmGadgetRequestPoolSize     , 0x00010001, 0x0000 ; 0
+HKR, Parameters, NcmMaxDatagramSize           , 0x00010001, 0x05EA ; 1514
+
+;-------------- WDF Coinstaller installation
+
+[ssud.Install.CoInst.NT.CoInstallers]
+AddReg = CoInstaller_AddReg
+CopyFiles = CoInstaller_CopyFiles
+
+[CoInstaller_CopyFiles]
+WdfCoInstaller01007.dll
+
+[CoInstaller_AddReg]
+HKR,,CoInstallers32,0x00010000, "WdfCoInstaller01007.dll,WdfCoInstaller"
+
+[ssud.Install.CoInst.NT.Wdf]
+KmdfService = ssudncm, ssudncm_wdfsect
+
+[ssud.Install.NT.Wdf]
+KmdfService = ssudncm, ssudncm_wdfsect
+
+[ssudncm_wdfsect]
+KmdfLibraryVersion = 1.7
+
+;---------------------------------------------------------------;
+
+;------------ NTarm64 --------------
+
+[ssud.Install.NTarm64]
+AddReg          = ssud.Reg
+CopyFiles		= CopyFiles
+
+[ssud.Install.NTarm64.Services]
+AddService = ssudncm, 2, ssud.AddService, ssud.EventLog
+
+[ssud.Install.NTarm64.CoInstallers]
+AddReg    = CoInstallers_AddReg_NTarm64
+CopyFiles = CoInstallers_CopyFiles_NTarm64
+
+[CoInstallers_AddReg_NTarm64]
+; No AddReg
+
+[CoInstallers_CopyFiles_NTarm64]
+; No CopyFiles
+
+[ssud.Install.NTarm64.Wdf]
+KmdfService = ssudncm, ssudncm_wdfsect_NTarm64
+
+[ssudncm_wdfsect_NTarm64]
+KmdfLibraryVersion = 1.15
+
+;-----------------------------------------------------------------------------
+; Localizable Strings
+;-----------------------------------------------------------------------------
+[Strings]
+Provider="SAMSUNG Electronics Co., Ltd."
+ssud="SAMSUNG Electronics Co., Ltd."
+
+ssud.Service.Name="SAMSUNG Mobile USB NCM Function Drivers"
+ssud.Service.Desc="SAMSUNG Mobile USB NCM Function Drivers"
+
+USB\SAMSUNG_MOBILE&NcmFunc.Desc="SAMSUNG Mobile USB NCM Function Drivers"
+
+DiskString="SAMSUNG Mobile USB NCM Function Drivers Installation Disk"

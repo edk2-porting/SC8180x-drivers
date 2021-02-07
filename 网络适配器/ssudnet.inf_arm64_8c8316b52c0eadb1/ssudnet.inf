@@ -1,0 +1,287 @@
+;*************************************************************************************
+;
+; Name      :  ssudnet.inf
+;
+; Function:  Install SAMSUNG Mobile USB Networking (CDC/NCM Ethernet) Driver on XP/VISTA/Win7
+;	
+; Copyright (c) DEVGURU Co., LTD. (www.devguru.co.kr)
+;
+;*************************************************************************************
+
+
+[version]
+Signature   = "$Windows NT$"
+Class       = Net
+ClassGUID   = {4d36e972-e325-11ce-bfc1-08002be10318}
+Provider    = %Provider%
+DriverVer=07/08/2019,2.16.9.0
+Catalogfile = ssudnet.cat
+
+[ControlFlags]
+ExcludeFromSelect = *
+
+[SourceDisksNames.x86]
+1 = %DiskString%,,,\i386
+
+[SourceDisksNames.amd64]
+1 = %DiskString%,,,\amd64
+
+[SourceDisksNames.arm64]
+1 = %DiskString%,,,\arm64
+
+[SourceDisksFiles.x86]
+; filename = diskid[,[ subdir][, size]]
+ssudnet.sys = 1
+WdfCoInstaller01007.dll=1 ; make sure the number matches with SourceDisksNames
+
+[SourceDisksFiles.amd64]
+; filename = diskid[,[ subdir][, size]]
+ssudnet.sys = 1
+WdfCoInstaller01007.dll=1 ; make sure the number matches with SourceDisksNames
+
+[SourceDisksFiles.arm64]
+; filename = diskid[,[ subdir][, size]]
+ssudnet.sys = 1
+
+;-----------------------------------------------------------------------------
+; Specify target paths...
+;-----------------------------------------------------------------------------
+
+[DestinationDirs]
+DefaultDestDir  = 12             	; system32\drivers
+CopyFiles       = 12                    ; system32\drivers
+CopyFiles.Win2K = 12                    ;
+CoInstaller_CopyFiles = 11
+
+;-----------------------------------------------------------------------------
+; Table of Contents
+;-----------------------------------------------------------------------------
+[Manufacturer]
+%ssud% = ssud, NTx86, NTx86.6.1, NTamd64, NTamd64.6.1, NTarm64
+
+;-----------------------------------------------------------------------------
+; Device-by-device entries
+;-----------------------------------------------------------------------------
+[ssud]
+%USB\SAMSUNG_MOBILE&NcmAdpt.Desc%    = ssud.Install.CoInst, USB\VID_04E8&PID_685D&MP&NCMNETMP
+%USB\SAMSUNG_MOBILE&NcmAdpt.Desc%    = ssud.Install.CoInst, USB\VID_04E8&PID_685E&MP&NCMNETMP
+%USB\SAMSUNG_MOBILE&NcmAdpt.Desc%    = ssud.Install.CoInst, USB\VID_04E8&PID_6860&MP&NCMNETMP
+%USB\SAMSUNG_MOBILE&NcmAdpt.Desc%    = ssud.Install.CoInst, USB\VID_04E8&PID_6861&MP&NCMNETMP
+%USB\SAMSUNG_MOBILE&NcmAdpt.Desc%    = ssud.Install.CoInst, USB\VID_04E8&PID_6862&MP&NCMNETMP
+%USB\SAMSUNG_MOBILE&NcmAdpt.Desc%    = ssud.Install.CoInst, USB\VID_04E8&PID_6863&MP&NCMNETMP
+%USB\SAMSUNG_MOBILE&NcmAdpt.Desc%    = ssud.Install.CoInst, USB\VID_04E8&PID_686A&MP&NCMNETMP
+%USB\SAMSUNG_MOBILE&NcmAdpt.Desc%    = ssud.Install.CoInst, USB\VID_04E8&PID_686B&MP&NCMNETMP
+%USB\SAMSUNG_MOBILE&NcmAdpt.Desc%    = ssud.Install.CoInst, USB\VID_04E8&PID_686C&MP&NCMNETMP
+%USB\SAMSUNG_MOBILE&NcmAdpt.Desc%    = ssud.Install.CoInst, USB\VID_04E8&PID_A50B&MP&NCMNETMP
+
+[ssud.NTx86]
+%USB\SAMSUNG_MOBILE&NcmAdpt.Desc%    = ssud.Install.CoInst, USB\VID_04E8&PID_685D&MP&NCMNETMP
+%USB\SAMSUNG_MOBILE&NcmAdpt.Desc%    = ssud.Install.CoInst, USB\VID_04E8&PID_685E&MP&NCMNETMP
+%USB\SAMSUNG_MOBILE&NcmAdpt.Desc%    = ssud.Install.CoInst, USB\VID_04E8&PID_6860&MP&NCMNETMP
+%USB\SAMSUNG_MOBILE&NcmAdpt.Desc%    = ssud.Install.CoInst, USB\VID_04E8&PID_6861&MP&NCMNETMP
+%USB\SAMSUNG_MOBILE&NcmAdpt.Desc%    = ssud.Install.CoInst, USB\VID_04E8&PID_6862&MP&NCMNETMP
+%USB\SAMSUNG_MOBILE&NcmAdpt.Desc%    = ssud.Install.CoInst, USB\VID_04E8&PID_6863&MP&NCMNETMP
+%USB\SAMSUNG_MOBILE&NcmAdpt.Desc%    = ssud.Install.CoInst, USB\VID_04E8&PID_686A&MP&NCMNETMP
+%USB\SAMSUNG_MOBILE&NcmAdpt.Desc%    = ssud.Install.CoInst, USB\VID_04E8&PID_686B&MP&NCMNETMP
+%USB\SAMSUNG_MOBILE&NcmAdpt.Desc%    = ssud.Install.CoInst, USB\VID_04E8&PID_686C&MP&NCMNETMP
+%USB\SAMSUNG_MOBILE&NcmAdpt.Desc%    = ssud.Install.CoInst, USB\VID_04E8&PID_A50B&MP&NCMNETMP
+
+[ssud.NTx86.6.1]
+%USB\SAMSUNG_MOBILE&NcmAdpt.Desc%    = ssud.Install, USB\VID_04E8&PID_685D&MP&NCMNETMP
+%USB\SAMSUNG_MOBILE&NcmAdpt.Desc%    = ssud.Install, USB\VID_04E8&PID_685E&MP&NCMNETMP
+%USB\SAMSUNG_MOBILE&NcmAdpt.Desc%    = ssud.Install, USB\VID_04E8&PID_6860&MP&NCMNETMP
+%USB\SAMSUNG_MOBILE&NcmAdpt.Desc%    = ssud.Install, USB\VID_04E8&PID_6861&MP&NCMNETMP
+%USB\SAMSUNG_MOBILE&NcmAdpt.Desc%    = ssud.Install, USB\VID_04E8&PID_6862&MP&NCMNETMP
+%USB\SAMSUNG_MOBILE&NcmAdpt.Desc%    = ssud.Install, USB\VID_04E8&PID_6863&MP&NCMNETMP
+%USB\SAMSUNG_MOBILE&NcmAdpt.Desc%    = ssud.Install, USB\VID_04E8&PID_686A&MP&NCMNETMP
+%USB\SAMSUNG_MOBILE&NcmAdpt.Desc%    = ssud.Install, USB\VID_04E8&PID_686B&MP&NCMNETMP
+%USB\SAMSUNG_MOBILE&NcmAdpt.Desc%    = ssud.Install, USB\VID_04E8&PID_686C&MP&NCMNETMP
+%USB\SAMSUNG_MOBILE&NcmAdpt.Desc%    = ssud.Install, USB\VID_04E8&PID_A50B&MP&NCMNETMP
+
+[ssud.NTamd64]
+%USB\SAMSUNG_MOBILE&NcmAdpt.Desc%    = ssud.Install.CoInst, USB\VID_04E8&PID_685D&MP&NCMNETMP
+%USB\SAMSUNG_MOBILE&NcmAdpt.Desc%    = ssud.Install.CoInst, USB\VID_04E8&PID_685E&MP&NCMNETMP
+%USB\SAMSUNG_MOBILE&NcmAdpt.Desc%    = ssud.Install.CoInst, USB\VID_04E8&PID_6860&MP&NCMNETMP
+%USB\SAMSUNG_MOBILE&NcmAdpt.Desc%    = ssud.Install.CoInst, USB\VID_04E8&PID_6861&MP&NCMNETMP
+%USB\SAMSUNG_MOBILE&NcmAdpt.Desc%    = ssud.Install.CoInst, USB\VID_04E8&PID_6862&MP&NCMNETMP
+%USB\SAMSUNG_MOBILE&NcmAdpt.Desc%    = ssud.Install.CoInst, USB\VID_04E8&PID_6863&MP&NCMNETMP
+%USB\SAMSUNG_MOBILE&NcmAdpt.Desc%    = ssud.Install.CoInst, USB\VID_04E8&PID_686A&MP&NCMNETMP
+%USB\SAMSUNG_MOBILE&NcmAdpt.Desc%    = ssud.Install.CoInst, USB\VID_04E8&PID_686B&MP&NCMNETMP
+%USB\SAMSUNG_MOBILE&NcmAdpt.Desc%    = ssud.Install.CoInst, USB\VID_04E8&PID_686C&MP&NCMNETMP
+%USB\SAMSUNG_MOBILE&NcmAdpt.Desc%    = ssud.Install.CoInst, USB\VID_04E8&PID_A50B&MP&NCMNETMP
+
+[ssud.NTamd64.6.1]
+%USB\SAMSUNG_MOBILE&NcmAdpt.Desc%    = ssud.Install, USB\VID_04E8&PID_685D&MP&NCMNETMP
+%USB\SAMSUNG_MOBILE&NcmAdpt.Desc%    = ssud.Install, USB\VID_04E8&PID_685E&MP&NCMNETMP
+%USB\SAMSUNG_MOBILE&NcmAdpt.Desc%    = ssud.Install, USB\VID_04E8&PID_6860&MP&NCMNETMP
+%USB\SAMSUNG_MOBILE&NcmAdpt.Desc%    = ssud.Install, USB\VID_04E8&PID_6861&MP&NCMNETMP
+%USB\SAMSUNG_MOBILE&NcmAdpt.Desc%    = ssud.Install, USB\VID_04E8&PID_6862&MP&NCMNETMP
+%USB\SAMSUNG_MOBILE&NcmAdpt.Desc%    = ssud.Install, USB\VID_04E8&PID_6863&MP&NCMNETMP
+%USB\SAMSUNG_MOBILE&NcmAdpt.Desc%    = ssud.Install, USB\VID_04E8&PID_686A&MP&NCMNETMP
+%USB\SAMSUNG_MOBILE&NcmAdpt.Desc%    = ssud.Install, USB\VID_04E8&PID_686B&MP&NCMNETMP
+%USB\SAMSUNG_MOBILE&NcmAdpt.Desc%    = ssud.Install, USB\VID_04E8&PID_686C&MP&NCMNETMP
+%USB\SAMSUNG_MOBILE&NcmAdpt.Desc%    = ssud.Install, USB\VID_04E8&PID_A50B&MP&NCMNETMP
+
+[ssud.NTarm64]
+%USB\SAMSUNG_MOBILE&NcmAdpt.Desc%    = ssud.Install, USB\VID_04E8&PID_685D&MP&NCMNETMP
+%USB\SAMSUNG_MOBILE&NcmAdpt.Desc%    = ssud.Install, USB\VID_04E8&PID_685E&MP&NCMNETMP
+%USB\SAMSUNG_MOBILE&NcmAdpt.Desc%    = ssud.Install, USB\VID_04E8&PID_6860&MP&NCMNETMP
+%USB\SAMSUNG_MOBILE&NcmAdpt.Desc%    = ssud.Install, USB\VID_04E8&PID_6861&MP&NCMNETMP
+%USB\SAMSUNG_MOBILE&NcmAdpt.Desc%    = ssud.Install, USB\VID_04E8&PID_6862&MP&NCMNETMP
+%USB\SAMSUNG_MOBILE&NcmAdpt.Desc%    = ssud.Install, USB\VID_04E8&PID_6863&MP&NCMNETMP
+%USB\SAMSUNG_MOBILE&NcmAdpt.Desc%    = ssud.Install, USB\VID_04E8&PID_686A&MP&NCMNETMP
+%USB\SAMSUNG_MOBILE&NcmAdpt.Desc%    = ssud.Install, USB\VID_04E8&PID_686B&MP&NCMNETMP
+%USB\SAMSUNG_MOBILE&NcmAdpt.Desc%    = ssud.Install, USB\VID_04E8&PID_686C&MP&NCMNETMP
+%USB\SAMSUNG_MOBILE&NcmAdpt.Desc%    = ssud.Install, USB\VID_04E8&PID_A50B&MP&NCMNETMP
+
+;-------------------------------------------------------------------------------
+; Virtual Ethernet Adapter
+;
+[ssud.Install.NT]
+; ndis 6.x only
+;*IfType            = 6        ; IF_TYPE_ETHERNET_CSMACD
+;*MediaType         = 0          ; NdisMedium802_3 
+;*PhysicalMediaType = 0          ; NdisPhysicalMediumUnspecified
+
+;Characteristics = 0x1 ; NCF_VIRTUAL, This driver's parent is NCM service driver(virtual bus)
+Characteristics = 0x4  ; 
+BusType	= 15
+
+AddReg          = ssud.Reg
+CopyFiles		= CopyFiles, CopyFiles.Win2K
+
+[ssud.Install.NT.Services]
+AddService      = ssudnet, 2, ssud.Service, ssud.EventLog
+
+[ssud.Install.CoInst.NT]
+; ndis 6.x only
+;*IfType            = 6        ; IF_TYPE_ETHERNET_CSMACD
+;*MediaType         = 0          ; NdisMedium802_3 
+;*PhysicalMediaType = 0          ; NdisPhysicalMediumUnspecified
+
+;Characteristics = 0x1 ; NCF_VIRTUAL, This driver's parent is NCM service driver(virtual bus)
+Characteristics = 0x4  ; 
+BusType	= 15
+
+AddReg          = ssud.Reg
+CopyFiles		= CopyFiles, CopyFiles.Win2K
+
+[ssud.Install.CoInst.NT.Services]
+AddService      = ssudnet, 2, ssud.Service, ssud.EventLog
+
+;-----------------------------------------------------------------------------
+; Virtual Miniport Common
+;
+[ssud.Reg]
+HKR,    ,                         BusNumber,           0, "0" 
+HKR, Ndi,                         Service,             0, "ssudnet"
+HKR, Ndi\Interfaces,              UpperRange,          0, "ndis5"
+HKR, Ndi\Interfaces,              LowerRange,          0, "ethernet"
+
+;-----------------------------------------------------------------------------
+;  Copy lists
+;-----------------------------------------------------------------------------
+[CopyFiles]
+
+[CopyFiles.Win2K]
+ssudnet.sys
+
+;-----------------------------------------------------------------------------
+;  NT Services installation
+;-----------------------------------------------------------------------------
+[ssud.Service]
+DisplayName		= %ssud.Service.Name%
+Description		= %ssud.Service.Desc%
+ServiceType     = 1 ;%SERVICE_KERNEL_DRIVER%
+StartType       = 3 ;%SERVICE_DEMAND_START%
+ErrorControl    = 1 ;%SERVICE_ERROR_NORMAL%
+ServiceBinary   = %12%\ssudnet.sys
+LoadOrderGroup  = NDIS
+AddReg          = TextModeFlags.Reg
+
+[ssud.EventLog]
+AddReg = ssud.AddEventLog.Reg
+
+[ssud.AddEventLog.Reg]
+HKR, , EventMessageFile, 0x00020000, "%%SystemRoot%%\System32\netevent.dll"
+HKR, , TypesSupported,   0x00010001, 7
+
+[TextModeFlags.Reg]
+HKR,           , TextModeFlags              , 0x00010001, 0x0001
+HKR, Parameters, DefaultConnectState        , 0x00010001, 0x0001 ; state connected(0), status disconnected(1)
+HKR, Parameters, EnableAsynchRecvResource   , 0x00010001, 0x0000 ; sync(0), async(1)
+HKR, Parameters, EnableSendCompleteThreading, 0x00010001, 0x0001 ; nothread(0), threading(1)
+HKR, Parameters, EnableUsbBulkInThreading   , 0x00010001, 0x0001 ; nothread(0), threading(1)
+HKR, Parameters, EnableUsbBulkOutThreading  , 0x00010001, 0x0000 ; nothread(0), threading(1)
+HKR, Parameters, MaxReadRequestCnt          , 0x00010001, 0x0004 ; 4
+HKR, Parameters, NicTxBufferSize            , 0x00010001, 0x8000 ; 32768
+
+;-------------- WDF Coinstaller installation
+
+[ssud.Install.CoInst.NT.CoInstallers]
+AddReg = CoInstaller_AddReg
+CopyFiles = CoInstaller_CopyFiles
+
+[CoInstaller_CopyFiles]
+WdfCoInstaller01007.dll
+
+[CoInstaller_AddReg]
+HKR,,CoInstallers32,0x00010000, "WdfCoInstaller01007.dll,WdfCoInstaller"
+
+[ssud.Install.CoInst.NT.Wdf]
+KmdfService = ssudnet, ssudnet_wdfsect
+
+[ssud.Install.NT.Wdf]
+KmdfService = ssudnet, ssudnet_wdfsect
+
+[ssudnet_wdfsect]
+KmdfLibraryVersion = 1.7
+
+;---------------------------------------------------------------;
+
+;------------ NTarm64 --------------
+
+[ssud.Install.NTarm64]
+*IfType            = 6        ; IF_TYPE_ETHERNET_CSMACD
+*MediaType         = 0          ; NdisMedium802_3 
+*PhysicalMediaType = 0          ; NdisPhysicalMediumUnspecified
+
+;Characteristics = 0x1 ; NCF_VIRTUAL, This driver's parent is NCM service driver(virtual bus)
+Characteristics = 0x4  ; 
+BusType	= 15
+
+AddReg          = ssud.Reg
+CopyFiles		= CopyFiles, CopyFiles.Win2K
+
+[ssud.Install.NTarm64.Services]
+AddService      = ssudnet, 2, ssud.Service, ssud.EventLog
+
+[ssud.Install.NTarm64.CoInstallers]
+AddReg    = CoInstallers_AddReg_NTarm64
+CopyFiles = CoInstallers_CopyFiles_NTarm64
+
+[CoInstallers_AddReg_NTarm64]
+; No AddReg
+
+[CoInstallers_CopyFiles_NTarm64]
+; No CopyFiles
+
+[ssud.Install.NTarm64.Wdf]
+KmdfService = ssudnet, ssudnet_wdfsect_NTarm64
+
+[ssudnet_wdfsect_NTarm64]
+KmdfLibraryVersion = 1.15
+
+;-----------------------------------------------------------------------------
+; Localizable Strings
+;-----------------------------------------------------------------------------
+[Strings]
+Provider   = "SAMSUNG Electronics Co., Ltd."
+ssud       = "SAMSUNG Electronics Co., Ltd."
+
+ssud.Service.Name = "SAMSUNG Mobile USB Networking (CDC/NCM Ethernet) Drivers"
+ssud.Service.Desc = "SAMSUNG Mobile USB Networking (CDC/NCM Ethernet) Drivers"
+
+USB\SAMSUNG_MOBILE&NcmAdpt.Desc      = "SAMSUNG Mobile USB Networking (CDC/NCM Ethernet) Drivers"
+
+DiskString = "SAMSUNG Mobile USB Networking (CDC/NCM Ethernet) Drivers Installation Disk"

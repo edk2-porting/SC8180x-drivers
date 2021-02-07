@@ -1,0 +1,182 @@
+;*************************************************************************************
+;
+; Name		: ssudqcnet.inf  
+;
+; Function	: Install SAMSUNG Escape USB RMNET Miniport Ethernet Adapter driver
+;
+; Copyright (c) DEVGURU Co., Ltd. (www.devguru.co.kr)
+;
+;*************************************************************************************
+[version]
+Signature   = "$Windows NT$"
+Class       = Net
+ClassGUID   = {4d36e972-e325-11ce-bfc1-08002be10318}
+Provider    = %Provider%
+DriverVer=07/08/2019,2.16.9.0
+Catalogfile = ssudqcnet.cat
+
+[ControlFlags]
+ExcludeFromSelect = *
+
+[Manufacturer]
+%ssud% = ssud, NTamd64, NTarm64
+
+[SourceDisksNames.x86]
+1 = %DiskString%,"",,\i386
+
+[SourceDisksNames.amd64]
+1 = %DiskString%,"",,\amd64
+
+[SourceDisksFiles]
+ssudqcnet.sys = 1
+
+[ssud]
+%USB\SAMSUNG_MOBILE&RMNET.DeviceDesc% = ssud.Install, USB\VID_04E8&PID_685D&QCNet&QCNet
+%USB\SAMSUNG_MOBILE&RMNET.DeviceDesc% = ssud.Install, USB\VID_04E8&PID_685E&QCNet&QCNet
+%USB\SAMSUNG_MOBILE&RMNET.DeviceDesc% = ssud.Install, USB\VID_04E8&PID_6860&QCNet&QCNet
+%USB\SAMSUNG_MOBILE&RMNET.DeviceDesc% = ssud.Install, USB\VID_04E8&PID_6861&QCNet&QCNet
+%USB\SAMSUNG_MOBILE&RMNET.DeviceDesc% = ssud.Install, USB\VID_04E8&PID_6862&QCNet&QCNet
+%USB\SAMSUNG_MOBILE&RMNET.DeviceDesc% = ssud.Install, USB\VID_04E8&PID_6864&QCNet&QCNet
+%USB\SAMSUNG_MOBILE&RMNET.DeviceDesc% = ssud.Install, USB\VID_04E8&PID_6866&QCNet&QCNet
+%USB\SAMSUNG_MOBILE&RMNET.DeviceDesc% = ssud.Install, USB\VID_04E8&PID_6867&QCNet&QCNet
+%USB\SAMSUNG_MOBILE&RMNET.DeviceDesc% = ssud.Install, USB\VID_04E8&PID_686A&QCNet&QCNet
+%USB\SAMSUNG_MOBILE&RMNET.DeviceDesc% = ssud.Install, USB\VID_04E8&PID_686B&QCNet&QCNet
+%USB\SAMSUNG_MOBILE&RMNET.DeviceDesc% = ssud.Install, USB\VID_04E8&PID_686C&QCNet&QCNet
+%USB\SAMSUNG_MOBILE&RMNET.DeviceDesc% = ssud.Install, USB\VID_04E8&PID_A50B&QCNet&QCNet
+
+[ssud.NTamd64]
+%USB\SAMSUNG_MOBILE&RMNET.DeviceDesc% = ssud.Install, USB\VID_04E8&PID_685D&QCNet&QCNet
+%USB\SAMSUNG_MOBILE&RMNET.DeviceDesc% = ssud.Install, USB\VID_04E8&PID_685E&QCNet&QCNet
+%USB\SAMSUNG_MOBILE&RMNET.DeviceDesc% = ssud.Install, USB\VID_04E8&PID_6860&QCNet&QCNet
+%USB\SAMSUNG_MOBILE&RMNET.DeviceDesc% = ssud.Install, USB\VID_04E8&PID_6861&QCNet&QCNet
+%USB\SAMSUNG_MOBILE&RMNET.DeviceDesc% = ssud.Install, USB\VID_04E8&PID_6862&QCNet&QCNet
+%USB\SAMSUNG_MOBILE&RMNET.DeviceDesc% = ssud.Install, USB\VID_04E8&PID_6864&QCNet&QCNet
+%USB\SAMSUNG_MOBILE&RMNET.DeviceDesc% = ssud.Install, USB\VID_04E8&PID_6866&QCNet&QCNet
+%USB\SAMSUNG_MOBILE&RMNET.DeviceDesc% = ssud.Install, USB\VID_04E8&PID_6867&QCNet&QCNet
+%USB\SAMSUNG_MOBILE&RMNET.DeviceDesc% = ssud.Install, USB\VID_04E8&PID_686A&QCNet&QCNet
+%USB\SAMSUNG_MOBILE&RMNET.DeviceDesc% = ssud.Install, USB\VID_04E8&PID_686B&QCNet&QCNet
+%USB\SAMSUNG_MOBILE&RMNET.DeviceDesc% = ssud.Install, USB\VID_04E8&PID_686C&QCNet&QCNet
+%USB\SAMSUNG_MOBILE&RMNET.DeviceDesc% = ssud.Install, USB\VID_04E8&PID_A50B&QCNet&QCNet
+
+[ssud.NTarm64]
+; it does not support arm64 platform
+
+;-------------------------------------------------------------------------------
+; Virtual Ethernet Adapter
+;
+[ssud.Install]
+Characteristics = 0x4 ; NCF_PHYSICAL
+BusType         = 15  ; PNPBus
+AddReg          = ssud.Reg
+CopyFiles       = ssud.CopyFiles
+
+[ssud.Install.Services]
+AddService      = ssudqcnet, 2, ssud.Service, ssud.EventLog
+
+;-----------------------------------------------------------------------------
+; WMI security settings
+;-----------------------------------------------------------------------------
+[ssud.Install.WMI]
+WMIInterface={DE81837E-BD78-4EC8-ABA8-89B7D026C1CF},,WMIGuidSecurity_AllReadAdminFul
+
+[WMIGuidSecurity_AllReadAdminFul]
+security="O:BAG:BAD:(A;;0x12001f;;;BA)(A;;0x12001f;;;LS)(A;;0x12001f;;;NS)(A;;0x12001f;;;SY)(A;;0x12001f;;;NO)(A;;CC;;;BU)"
+
+
+;-----------------------------------------------------------------------------
+; Virtual Miniport Common
+;
+[ssud.Reg]
+HKR,    ,                         BusNumber,           0, "0" 
+HKR, Ndi,                         Service,             0, "ssudqcnet"
+HKR, Ndi\Interfaces,              UpperRange,          0, "ndis5"
+HKR, Ndi\Interfaces,              LowerRange,          0, "ethernet"
+; HKR, Ndi\params\VlanID,     ParamDesc,       0, %VlanID%
+; HKR, Ndi\params\VlanID,     default,         0, "777"
+; HKR, Ndi\params\VlanID,     type,            0, "long"
+; HKR, Ndi\params\VlanID,     min,             0, "0"
+; HKR, Ndi\params\VlanID,     max,             0, "4095"
+; HKR, Ndi\params\VlanID,     step,            0, "1"
+; HKR, Ndi\params\VlanID,     base,            0, "10"
+HKR,, QCDevDisableQoS, 0x00010001, 0x00000003
+
+; Diable QMI
+; HKR,, QCMPDisableQMI, 0x00010001, 0x00000001
+
+; Disable QMAP V3
+HKR,, QCMPEnableQMAPV3, 0x00010001, 0x00000000
+
+; Disable QMAP V2
+HKR,, QCMPEnableQMAPV2, 0x00010001, 0x00000000
+
+; Disable QMAP V1
+; HKR,, QCMPEnableQMAPV1, 0x00010001, 0x00000000
+
+; Disable QCNCM UL
+; HKR,, QCMPEnableMBIMUL, 0x00010001, 0x00000000
+
+; Disable QCNCM DL
+; HKR,, QCMPEnableMBIMDL, 0x00010001, 0x00000000
+
+; Disable TLP UL
+; HKR,, QCMPEnableTLP, 0x00010001, 0x00000000
+
+; Disable TLP DL
+; HKR,, QCMPEnableDLTLP, 0x00010001, 0x00000000
+
+; Max UL aggregated packets
+; HKR,, QCDriverTLPMaxPackets, 0x00010001, 0x00000003
+
+; Max DL aggregated packets
+HKR,, QCDriverDLMaxPackets, 0x00010001, 0x00000020
+
+; Max DL aggregated Size
+HKR,, QCDriverDLAggregationSize, 0x00010001, 0x00008000
+;-----------------------------------------------------------------------------
+; Driver and Service Section
+;
+[ssud.CopyFiles]
+ssudqcnet.sys
+
+[ssud.Service]
+DisplayName     = %ssud.Service.Name%
+ServiceType     = 1 ;%SERVICE_KERNEL_DRIVER%
+StartType       = 3 ;%SERVICE_DEMAND_START%
+ErrorControl    = 1 ;%SERVICE_ERROR_NORMAL%
+ServiceBinary   = %12%\ssudqcnet.sys
+LoadOrderGroup  = NDIS
+AddReg          = TextModeFlags.Reg
+
+[ssud.EventLog]
+AddReg = ssud.AddEventLog.Reg
+
+[ssud.AddEventLog.Reg]
+HKR, , EventMessageFile, 0x00020000, "%%SystemRoot%%\System32\netevent.dll"
+HKR, , TypesSupported,   0x00010001, 7
+
+[TextModeFlags.Reg]
+HKR, , TextModeFlags,    0x00010001, 0x0001
+
+; [SourceDisksNames]
+; 1 = %DiskId1%,,,""
+
+;[SourceDisksFiles]
+;ssudqcnet.sys  = 1
+
+;-----------------------------------------------------------------------------
+; DestinationDirs
+;
+[DestinationDirs]
+DefaultDestDir = 12
+
+;-----------------------------------------------------------------------------
+; Localizable Strings
+;
+[Strings]
+Provider="SAMSUNG Electronics Co., Ltd."
+ssud="SAMSUNG Electronics Co., Ltd."
+
+DiskString="SAMSUNG Mobile USB QCRMNET Network Adapter Drivers Installation Disk"
+USB\SAMSUNG_MOBILE&RMNET.DeviceDesc="SAMSUNG Mobile USB QCRMNET Network Adapter Drivers"
+ssud.Service.Name="SAMSUNG Mobile USB QC RMNET Drivers"
+ssud.Service.Desc="SAMSUNG Mobile USB QC RMNET Drivers"

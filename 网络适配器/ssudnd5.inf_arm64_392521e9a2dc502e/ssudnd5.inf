@@ -1,0 +1,388 @@
+;*************************************************************************************
+;
+; Name		: ssudnd5.inf
+;
+; Function	: Install SAMSUNG Escape USB Ethernet Adapter driver
+;
+; Copyright (c) DEVGURU Co., Ltd. (www.devguru.co.kr)
+;
+;*************************************************************************************
+
+[version]
+Signature   = "$Windows NT$"
+Class       = Net
+ClassGUID   = {4d36e972-e325-11ce-bfc1-08002be10318}
+Provider    = %Msft%
+DriverVer=07/08/2019,2.16.9.0
+Catalogfile = ssudnd5.cat
+
+[ControlFlags]
+ExcludeFromSelect=*
+
+[Manufacturer]
+%Msft% = Msft,NTx86, NTx86.6.1, NTamd64, NTamd64.6.1, NTarm64
+
+; For Win2K
+[Msft]
+%SSUD.EEM.DeviceDesc% = ssud.Install.CoInst, USB\VID_04E8&PID_685D&EEMNET
+%SSUD.EEM.DeviceDesc% = ssud.Install.CoInst, USB\VID_04E8&PID_685E&EEMNET
+%SSUD.EEM.DeviceDesc% = ssud.Install.CoInst, USB\VID_04E8&PID_6860&EEMNET
+%SSUD.EEM.DeviceDesc% = ssud.Install.CoInst, USB\VID_04E8&PID_6861&EEMNET
+%SSUD.EEM.DeviceDesc% = ssud.Install.CoInst, USB\VID_04E8&PID_6862&EEMNET
+%SSUD.EEM.DeviceDesc% = ssud.Install.CoInst, USB\VID_04E8&PID_6864&EEMNET
+%SSUD.EEM.DeviceDesc% = ssud.Install.CoInst, USB\VID_04E8&PID_6866&EEMNET
+%SSUD.EEM.DeviceDesc% = ssud.Install.CoInst, USB\VID_04E8&PID_6867&EEMNET
+%SSUD.EEM.DeviceDesc% = ssud.Install.CoInst, USB\VID_04E8&PID_686A&EEMNET
+%SSUD.EEM.DeviceDesc% = ssud.Install.CoInst, USB\VID_04E8&PID_686B&EEMNET
+%SSUD.EEM.DeviceDesc% = ssud.Install.CoInst, USB\VID_04E8&PID_686C&EEMNET
+%SSUD.EEM.DeviceDesc% = ssud.Install.CoInst, USB\VID_04E8&PID_A50B&EEMNET
+%SSUD.EEM.DeviceDesc% = ssud.Install.CoInst, USB\SAMSUNG_MOBILE&EEMNET
+
+%SSUD.ECM.DeviceDesc% = ssud.Install.CoInst, USB\VID_04E8&PID_685D&ECMNET
+%SSUD.ECM.DeviceDesc% = ssud.Install.CoInst, USB\VID_04E8&PID_685E&ECMNET
+%SSUD.ECM.DeviceDesc% = ssud.Install.CoInst, USB\VID_04E8&PID_6860&ECMNET
+%SSUD.ECM.DeviceDesc% = ssud.Install.CoInst, USB\VID_04E8&PID_6861&ECMNET
+%SSUD.ECM.DeviceDesc% = ssud.Install.CoInst, USB\VID_04E8&PID_6862&ECMNET
+%SSUD.ECM.DeviceDesc% = ssud.Install.CoInst, USB\VID_04E8&PID_6864&ECMNET
+%SSUD.ECM.DeviceDesc% = ssud.Install.CoInst, USB\VID_04E8&PID_6866&ECMNET
+%SSUD.ECM.DeviceDesc% = ssud.Install.CoInst, USB\VID_04E8&PID_6867&ECMNET
+%SSUD.ECM.DeviceDesc% = ssud.Install.CoInst, USB\VID_04E8&PID_686A&ECMNET
+%SSUD.ECM.DeviceDesc% = ssud.Install.CoInst, USB\VID_04E8&PID_686B&ECMNET
+%SSUD.ECM.DeviceDesc% = ssud.Install.CoInst, USB\VID_04E8&PID_686C&ECMNET
+%SSUD.ECM.DeviceDesc% = ssud.Install.CoInst, USB\VID_04E8&PID_A50B&ECMNET
+%SSUD.ECM.DeviceDesc% = ssud.Install.CoInst, USB\SAMSUNG_MOBILE&ECMNET
+
+; For WinXP and later
+[Msft.NTx86]
+%SSUD.EEM.DeviceDesc% = ssud.Install.CoInst, USB\VID_04E8&PID_685D&EEMNET
+%SSUD.EEM.DeviceDesc% = ssud.Install.CoInst, USB\VID_04E8&PID_685E&EEMNET
+%SSUD.EEM.DeviceDesc% = ssud.Install.CoInst, USB\VID_04E8&PID_6860&EEMNET
+%SSUD.EEM.DeviceDesc% = ssud.Install.CoInst, USB\VID_04E8&PID_6861&EEMNET
+%SSUD.EEM.DeviceDesc% = ssud.Install.CoInst, USB\VID_04E8&PID_6862&EEMNET
+%SSUD.EEM.DeviceDesc% = ssud.Install.CoInst, USB\VID_04E8&PID_6864&EEMNET
+%SSUD.EEM.DeviceDesc% = ssud.Install.CoInst, USB\VID_04E8&PID_6866&EEMNET
+%SSUD.EEM.DeviceDesc% = ssud.Install.CoInst, USB\VID_04E8&PID_6867&EEMNET
+%SSUD.EEM.DeviceDesc% = ssud.Install.CoInst, USB\VID_04E8&PID_686A&EEMNET
+%SSUD.EEM.DeviceDesc% = ssud.Install.CoInst, USB\VID_04E8&PID_686B&EEMNET
+%SSUD.EEM.DeviceDesc% = ssud.Install.CoInst, USB\VID_04E8&PID_686C&EEMNET
+%SSUD.EEM.DeviceDesc% = ssud.Install.CoInst, USB\VID_04E8&PID_A50B&EEMNET
+%SSUD.EEM.DeviceDesc% = ssud.Install.CoInst, USB\SAMSUNG_MOBILE&EEMNET
+
+%SSUD.ECM.DeviceDesc% = ssud.Install.CoInst, USB\VID_04E8&PID_685D&ECMNET
+%SSUD.ECM.DeviceDesc% = ssud.Install.CoInst, USB\VID_04E8&PID_685E&ECMNET
+%SSUD.ECM.DeviceDesc% = ssud.Install.CoInst, USB\VID_04E8&PID_6860&ECMNET
+%SSUD.ECM.DeviceDesc% = ssud.Install.CoInst, USB\VID_04E8&PID_6861&ECMNET
+%SSUD.ECM.DeviceDesc% = ssud.Install.CoInst, USB\VID_04E8&PID_6862&ECMNET
+%SSUD.ECM.DeviceDesc% = ssud.Install.CoInst, USB\VID_04E8&PID_6864&ECMNET
+%SSUD.ECM.DeviceDesc% = ssud.Install.CoInst, USB\VID_04E8&PID_6866&ECMNET
+%SSUD.ECM.DeviceDesc% = ssud.Install.CoInst, USB\VID_04E8&PID_6867&ECMNET
+%SSUD.ECM.DeviceDesc% = ssud.Install.CoInst, USB\VID_04E8&PID_686A&ECMNET
+%SSUD.ECM.DeviceDesc% = ssud.Install.CoInst, USB\VID_04E8&PID_686B&ECMNET
+%SSUD.ECM.DeviceDesc% = ssud.Install.CoInst, USB\VID_04E8&PID_686C&ECMNET
+%SSUD.ECM.DeviceDesc% = ssud.Install.CoInst, USB\VID_04E8&PID_A50B&ECMNET
+%SSUD.ECM.DeviceDesc% = ssud.Install.CoInst, USB\SAMSUNG_MOBILE&ECMNET
+
+[Msft.NTx86.6.1]
+%SSUD.EEM.DeviceDesc% = ssud.Install, USB\VID_04E8&PID_685D&EEMNET
+%SSUD.EEM.DeviceDesc% = ssud.Install, USB\VID_04E8&PID_685E&EEMNET
+%SSUD.EEM.DeviceDesc% = ssud.Install, USB\VID_04E8&PID_6860&EEMNET
+%SSUD.EEM.DeviceDesc% = ssud.Install, USB\VID_04E8&PID_6861&EEMNET
+%SSUD.EEM.DeviceDesc% = ssud.Install, USB\VID_04E8&PID_6862&EEMNET
+%SSUD.EEM.DeviceDesc% = ssud.Install, USB\VID_04E8&PID_6864&EEMNET
+%SSUD.EEM.DeviceDesc% = ssud.Install, USB\VID_04E8&PID_6866&EEMNET
+%SSUD.EEM.DeviceDesc% = ssud.Install, USB\VID_04E8&PID_6867&EEMNET
+%SSUD.EEM.DeviceDesc% = ssud.Install, USB\VID_04E8&PID_686A&EEMNET
+%SSUD.EEM.DeviceDesc% = ssud.Install, USB\VID_04E8&PID_686B&EEMNET
+%SSUD.EEM.DeviceDesc% = ssud.Install, USB\VID_04E8&PID_686C&EEMNET
+%SSUD.EEM.DeviceDesc% = ssud.Install, USB\VID_04E8&PID_A50B&EEMNET
+%SSUD.EEM.DeviceDesc% = ssud.Install, USB\SAMSUNG_MOBILE&EEMNET
+
+%SSUD.ECM.DeviceDesc% = ssud.Install, USB\VID_04E8&PID_685D&ECMNET
+%SSUD.ECM.DeviceDesc% = ssud.Install, USB\VID_04E8&PID_685E&ECMNET
+%SSUD.ECM.DeviceDesc% = ssud.Install, USB\VID_04E8&PID_6860&ECMNET
+%SSUD.ECM.DeviceDesc% = ssud.Install, USB\VID_04E8&PID_6861&ECMNET
+%SSUD.ECM.DeviceDesc% = ssud.Install, USB\VID_04E8&PID_6862&ECMNET
+%SSUD.ECM.DeviceDesc% = ssud.Install, USB\VID_04E8&PID_6864&ECMNET
+%SSUD.ECM.DeviceDesc% = ssud.Install, USB\VID_04E8&PID_6866&ECMNET
+%SSUD.ECM.DeviceDesc% = ssud.Install, USB\VID_04E8&PID_6867&ECMNET
+%SSUD.ECM.DeviceDesc% = ssud.Install, USB\VID_04E8&PID_686A&ECMNET
+%SSUD.ECM.DeviceDesc% = ssud.Install, USB\VID_04E8&PID_686B&ECMNET
+%SSUD.ECM.DeviceDesc% = ssud.Install, USB\VID_04E8&PID_686C&ECMNET
+%SSUD.ECM.DeviceDesc% = ssud.Install, USB\VID_04E8&PID_A50B&ECMNET
+%SSUD.ECM.DeviceDesc% = ssud.Install, USB\SAMSUNG_MOBILE&ECMNET
+
+; For WinXP and later
+[Msft.NTamd64]
+%SSUD.EEM.DeviceDesc% = ssud.Install.CoInst, USB\VID_04E8&PID_685D&EEMNET
+%SSUD.EEM.DeviceDesc% = ssud.Install.CoInst, USB\VID_04E8&PID_685E&EEMNET
+%SSUD.EEM.DeviceDesc% = ssud.Install.CoInst, USB\VID_04E8&PID_6860&EEMNET
+%SSUD.EEM.DeviceDesc% = ssud.Install.CoInst, USB\VID_04E8&PID_6861&EEMNET
+%SSUD.EEM.DeviceDesc% = ssud.Install.CoInst, USB\VID_04E8&PID_6862&EEMNET
+%SSUD.EEM.DeviceDesc% = ssud.Install.CoInst, USB\VID_04E8&PID_6864&EEMNET
+%SSUD.EEM.DeviceDesc% = ssud.Install.CoInst, USB\VID_04E8&PID_6866&EEMNET
+%SSUD.EEM.DeviceDesc% = ssud.Install.CoInst, USB\VID_04E8&PID_6867&EEMNET
+%SSUD.EEM.DeviceDesc% = ssud.Install.CoInst, USB\VID_04E8&PID_686A&EEMNET
+%SSUD.EEM.DeviceDesc% = ssud.Install.CoInst, USB\VID_04E8&PID_686B&EEMNET
+%SSUD.EEM.DeviceDesc% = ssud.Install.CoInst, USB\VID_04E8&PID_686C&EEMNET
+%SSUD.EEM.DeviceDesc% = ssud.Install.CoInst, USB\VID_04E8&PID_A50B&EEMNET
+%SSUD.EEM.DeviceDesc% = ssud.Install.CoInst, USB\SAMSUNG_MOBILE&EEMNET
+
+%SSUD.ECM.DeviceDesc% = ssud.Install.CoInst, USB\VID_04E8&PID_685D&ECMNET
+%SSUD.ECM.DeviceDesc% = ssud.Install.CoInst, USB\VID_04E8&PID_685E&ECMNET
+%SSUD.ECM.DeviceDesc% = ssud.Install.CoInst, USB\VID_04E8&PID_6860&ECMNET
+%SSUD.ECM.DeviceDesc% = ssud.Install.CoInst, USB\VID_04E8&PID_6861&ECMNET
+%SSUD.ECM.DeviceDesc% = ssud.Install.CoInst, USB\VID_04E8&PID_6862&ECMNET
+%SSUD.ECM.DeviceDesc% = ssud.Install.CoInst, USB\VID_04E8&PID_6864&ECMNET
+%SSUD.ECM.DeviceDesc% = ssud.Install.CoInst, USB\VID_04E8&PID_6866&ECMNET
+%SSUD.ECM.DeviceDesc% = ssud.Install.CoInst, USB\VID_04E8&PID_6867&ECMNET
+%SSUD.ECM.DeviceDesc% = ssud.Install.CoInst, USB\VID_04E8&PID_686A&ECMNET
+%SSUD.ECM.DeviceDesc% = ssud.Install.CoInst, USB\VID_04E8&PID_686B&ECMNET
+%SSUD.ECM.DeviceDesc% = ssud.Install.CoInst, USB\VID_04E8&PID_686C&ECMNET
+%SSUD.ECM.DeviceDesc% = ssud.Install.CoInst, USB\VID_04E8&PID_A50B&ECMNET
+%SSUD.ECM.DeviceDesc% = ssud.Install.CoInst, USB\SAMSUNG_MOBILE&ECMNET
+
+[Msft.NTamd64.6.1]
+%SSUD.EEM.DeviceDesc% = ssud.Install, USB\VID_04E8&PID_685D&EEMNET
+%SSUD.EEM.DeviceDesc% = ssud.Install, USB\VID_04E8&PID_685E&EEMNET
+%SSUD.EEM.DeviceDesc% = ssud.Install, USB\VID_04E8&PID_6860&EEMNET
+%SSUD.EEM.DeviceDesc% = ssud.Install, USB\VID_04E8&PID_6861&EEMNET
+%SSUD.EEM.DeviceDesc% = ssud.Install, USB\VID_04E8&PID_6862&EEMNET
+%SSUD.EEM.DeviceDesc% = ssud.Install, USB\VID_04E8&PID_6864&EEMNET
+%SSUD.EEM.DeviceDesc% = ssud.Install, USB\VID_04E8&PID_6866&EEMNET
+%SSUD.EEM.DeviceDesc% = ssud.Install, USB\VID_04E8&PID_6867&EEMNET
+%SSUD.EEM.DeviceDesc% = ssud.Install, USB\VID_04E8&PID_686A&EEMNET
+%SSUD.EEM.DeviceDesc% = ssud.Install, USB\VID_04E8&PID_686B&EEMNET
+%SSUD.EEM.DeviceDesc% = ssud.Install, USB\VID_04E8&PID_686C&EEMNET
+%SSUD.EEM.DeviceDesc% = ssud.Install, USB\VID_04E8&PID_A50B&EEMNET
+%SSUD.EEM.DeviceDesc% = ssud.Install, USB\SAMSUNG_MOBILE&EEMNET
+
+%SSUD.ECM.DeviceDesc% = ssud.Install, USB\VID_04E8&PID_685D&ECMNET
+%SSUD.ECM.DeviceDesc% = ssud.Install, USB\VID_04E8&PID_685E&ECMNET
+%SSUD.ECM.DeviceDesc% = ssud.Install, USB\VID_04E8&PID_6860&ECMNET
+%SSUD.ECM.DeviceDesc% = ssud.Install, USB\VID_04E8&PID_6861&ECMNET
+%SSUD.ECM.DeviceDesc% = ssud.Install, USB\VID_04E8&PID_6862&ECMNET
+%SSUD.ECM.DeviceDesc% = ssud.Install, USB\VID_04E8&PID_6864&ECMNET
+%SSUD.ECM.DeviceDesc% = ssud.Install, USB\VID_04E8&PID_6866&ECMNET
+%SSUD.ECM.DeviceDesc% = ssud.Install, USB\VID_04E8&PID_6867&ECMNET
+%SSUD.ECM.DeviceDesc% = ssud.Install, USB\VID_04E8&PID_686A&ECMNET
+%SSUD.ECM.DeviceDesc% = ssud.Install, USB\VID_04E8&PID_686B&ECMNET
+%SSUD.ECM.DeviceDesc% = ssud.Install, USB\VID_04E8&PID_686C&ECMNET
+%SSUD.ECM.DeviceDesc% = ssud.Install, USB\VID_04E8&PID_A50B&ECMNET
+%SSUD.ECM.DeviceDesc% = ssud.Install, USB\SAMSUNG_MOBILE&ECMNET
+
+[Msft.NTarm64]
+%SSUD.EEM.DeviceDesc.ndis63% = ssud.Install, USB\VID_04E8&PID_685D&EEMNET
+%SSUD.EEM.DeviceDesc.ndis63% = ssud.Install, USB\VID_04E8&PID_685E&EEMNET
+%SSUD.EEM.DeviceDesc.ndis63% = ssud.Install, USB\VID_04E8&PID_6860&EEMNET
+%SSUD.EEM.DeviceDesc.ndis63% = ssud.Install, USB\VID_04E8&PID_6861&EEMNET
+%SSUD.EEM.DeviceDesc.ndis63% = ssud.Install, USB\VID_04E8&PID_6862&EEMNET
+%SSUD.EEM.DeviceDesc.ndis63% = ssud.Install, USB\VID_04E8&PID_6864&EEMNET
+%SSUD.EEM.DeviceDesc.ndis63% = ssud.Install, USB\VID_04E8&PID_6866&EEMNET
+%SSUD.EEM.DeviceDesc.ndis63% = ssud.Install, USB\VID_04E8&PID_6867&EEMNET
+%SSUD.EEM.DeviceDesc.ndis63% = ssud.Install, USB\VID_04E8&PID_686A&EEMNET
+%SSUD.EEM.DeviceDesc.ndis63% = ssud.Install, USB\VID_04E8&PID_686B&EEMNET
+%SSUD.EEM.DeviceDesc.ndis63% = ssud.Install, USB\VID_04E8&PID_686C&EEMNET
+%SSUD.EEM.DeviceDesc.ndis63% = ssud.Install, USB\VID_04E8&PID_A50B&EEMNET
+%SSUD.EEM.DeviceDesc.ndis63% = ssud.Install, USB\SAMSUNG_MOBILE&EEMNET
+
+%SSUD.ECM.DeviceDesc.ndis63% = ssud.Install, USB\VID_04E8&PID_685D&ECMNET
+%SSUD.ECM.DeviceDesc.ndis63% = ssud.Install, USB\VID_04E8&PID_685E&ECMNET
+%SSUD.ECM.DeviceDesc.ndis63% = ssud.Install, USB\VID_04E8&PID_6860&ECMNET
+%SSUD.ECM.DeviceDesc.ndis63% = ssud.Install, USB\VID_04E8&PID_6861&ECMNET
+%SSUD.ECM.DeviceDesc.ndis63% = ssud.Install, USB\VID_04E8&PID_6862&ECMNET
+%SSUD.ECM.DeviceDesc.ndis63% = ssud.Install, USB\VID_04E8&PID_6864&ECMNET
+%SSUD.ECM.DeviceDesc.ndis63% = ssud.Install, USB\VID_04E8&PID_6866&ECMNET
+%SSUD.ECM.DeviceDesc.ndis63% = ssud.Install, USB\VID_04E8&PID_6867&ECMNET
+%SSUD.ECM.DeviceDesc.ndis63% = ssud.Install, USB\VID_04E8&PID_686A&ECMNET
+%SSUD.ECM.DeviceDesc.ndis63% = ssud.Install, USB\VID_04E8&PID_686B&ECMNET
+%SSUD.ECM.DeviceDesc.ndis63% = ssud.Install, USB\VID_04E8&PID_686C&ECMNET
+%SSUD.ECM.DeviceDesc.ndis63% = ssud.Install, USB\VID_04E8&PID_A50B&ECMNET
+%SSUD.ECM.DeviceDesc.ndis63% = ssud.Install, USB\SAMSUNG_MOBILE&ECMNET
+
+;-------------------------------------------------------------------------------
+;
+[ssud.Install.nt]
+Characteristics = 0x84 ; NCF_PHYSICAL,NCF_HAS_UI 
+BusType         = 15 ; if you specify NCF_PHYSICAL, you must specify bustype
+AddReg          = ssud.Reg, ParamsPromiscuous
+CopyFiles       = ssud.CopyFiles
+
+[ssud.Install.NT.Services]
+AddService      = ssudnd5, 2, ssud.Service, ssud.EventLog
+
+[ssud.Install.CoInst.nt]
+Characteristics = 0x84 ; NCF_PHYSICAL,NCF_HAS_UI 
+BusType         = 15 ; if you specify NCF_PHYSICAL, you must specify bustype
+AddReg          = ssud.Reg, ParamsPromiscuous
+CopyFiles       = ssud.CopyFiles
+
+[ssud.Install.CoInst.NT.Services]
+AddService      = ssudnd5, 2, ssud.Service, ssud.EventLog
+
+
+;-----------------------------------------------------------------------------
+;
+[ssud.Reg]
+HKR,    ,                         BusNumber,           0, "0"
+HKR, Ndi,                         Service,             0, "ssudnd5"
+HKR, Ndi\Interfaces,              UpperRange,          0, "ndis5"
+HKR, Ndi\Interfaces,              LowerRange,          0, "ethernet"
+
+[ParamsPromiscuous]
+;
+;    Should the physical NIC be set to Promiscuous mode
+;
+HKR, Ndi\Params\Promiscuous,     ParamDesc, , %Promiscuous%
+HKR, Ndi\Params\Promiscuous,     Default,  ,"0"
+HKR, Ndi\Params\Promiscuous,     type, ,      enum
+HKR, Ndi\Params\Promiscuous\enum,"1",  ,     %Promiscuous_Enable%
+HKR, Ndi\Params\Promiscuous\enum,"0",  ,     %Promiscuous_Disable%
+
+
+;-----------------------------------------------------------------------------
+; DestinationDirs
+;
+[DestinationDirs]
+ssud.CopyFiles = 12
+ssud_CoInstaller_CopyFiles = 11
+
+[ssud.CopyFiles]
+ssudnd5.sys,,,2
+
+;-----------------------------------------------------------------------------
+; Driver and Service Section
+;
+
+[ssud.Service]
+DisplayName     = %ssud.Service.DispName%
+Description	= %ssud.Service.Desc%
+ServiceType     = 1 ;%SERVICE_KERNEL_DRIVER%
+StartType       = 3 ;%SERVICE_DEMAND_START%
+ErrorControl    = 1 ;%SERVICE_ERROR_NORMAL%
+ServiceBinary   = %12%\ssudnd5.sys
+LoadOrderGroup  = NDIS
+AddReg          = TextModeFlags.Reg
+
+[ssud.EventLog]
+AddReg = ssud.AddEventLog.Reg
+
+[ssud.AddEventLog.Reg]
+HKR, , EventMessageFile, 0x00020000, "%%SystemRoot%%\System32\netevent.dll"
+HKR, , TypesSupported,   0x00010001, 7
+
+[TextModeFlags.Reg]
+HKR, , TextModeFlags,    0x00010001, 0x0001
+
+[SourceDisksNames.x86]
+1 = %DiskId1%,,,\i386
+
+[SourceDisksNames.amd64]
+1 = %DiskId1%,,,\amd64
+
+[SourceDisksNames.arm64]
+1 = %DiskId1.ndis63%,,,\arm64
+
+[SourceDisksFiles.x86]
+ssudnd5.sys  = 1,,
+WdfCoInstaller01007.dll=1 ; make sure the number matches with SourceDisksNames
+
+[SourceDisksFiles.amd64]
+ssudnd5.sys  = 1,,
+WdfCoInstaller01007.dll=1 ; make sure the number matches with SourceDisksNames
+
+[SourceDisksFiles.arm64]
+ssudnd5.sys  = 1,,
+
+;
+;--- ssud.Install.CoInst WDF Coinstaller installation ------
+;
+;[DestinationDirs]
+;ssud_CoInstaller_CopyFiles = 11
+
+[ssud.Install.CoInst.NT.CoInstallers]
+AddReg=ssud_CoInstaller_AddReg
+CopyFiles=ssud_CoInstaller_CopyFiles
+
+[ssud_CoInstaller_AddReg]
+HKR,,CoInstallers32,0x00010000, "WdfCoInstaller01007.dll,WdfCoInstaller"
+;HKR,,CoInstallers32,0x00010000, "WdfCoInstaller01009.dll,WdfCoInstaller"
+
+[ssud_CoInstaller_CopyFiles]
+WdfCoInstaller01007.dll
+;WdfCoInstaller01009.dll
+
+;[SourceDisksFiles]
+;WdfCoInstaller01007.dll=1 ; make sure the number matches with SourceDisksNames
+;WdfCoInstaller01009.dll=1
+
+[ssud.Install.CoInst.NT.Wdf]
+KmdfService = ssudnd5, ssud_wdfsect
+
+[ssud.Install.NT.Wdf]
+KmdfService = ssudnd5, ssud_wdfsect
+[ssud_wdfsect]
+KmdfLibraryVersion = 1.7
+;KmdfLibraryVersion = 1.9
+
+;------------ NTarm64 --------------
+
+[ssud.Install.NTarm64]
+Characteristics = 0x84 ; NCF_PHYSICAL,NCF_HAS_UI 
+BusType         = 15 ; if you specify NCF_PHYSICAL, you must specify bustype
+AddReg          = ssud.Reg, ParamsPromiscuous
+CopyFiles       = ssud.CopyFiles
+*IfType            = 6    ; IF_TYPE_ETHERNET_CSMACD.
+*MediaType         = 16   ; NdisMediumNative802_11
+*PhysicalMediaType = 14   ; NdisPhysicalMedium802_3
+
+[ssud.Install.NTarm64.Services]
+AddService      = ssudnd5, 2, ssud.Service_NTarm64, ssud.EventLog
+
+[ssud.Service_NTarm64]
+DisplayName     = %ssud.Service.DispName.ndis63%
+Description	= %ssud.Service.Desc.ndis63%
+ServiceType     = 1 ;%SERVICE_KERNEL_DRIVER%
+StartType       = 3 ;%SERVICE_DEMAND_START%
+ErrorControl    = 1 ;%SERVICE_ERROR_NORMAL%
+ServiceBinary   = %12%\ssudnd5.sys
+LoadOrderGroup  = NDIS
+AddReg          = TextModeFlags.Reg
+
+[ssud.Install.NTarm64.CoInstallers]
+AddReg    = CoInstallers_AddReg_NTarm64
+CopyFiles = CoInstallers_CopyFiles_NTarm64
+
+[CoInstallers_AddReg_NTarm64]
+; No AddReg
+
+[CoInstallers_CopyFiles_NTarm64]
+; No CopyFiles
+
+[ssud.Install.NTarm64.Wdf]
+KmdfService = ssudnd5, ssud_wdfsect_NTarm64
+
+[ssud_wdfsect_NTarm64]
+KmdfLibraryVersion = 1.15
+
+;-----------------------------------------------------------------------------
+; Localizable Strings
+;
+[Strings]
+Msft                       = "SAMSUNG Electronics Co., Ltd. "
+SSUD.EEM.DeviceDesc        = "SAMSUNG Mobile USB Networking (CDC/EEM Ethernet) Drivers (NDIS 5)"
+SSUD.ECM.DeviceDesc        = "SAMSUNG Mobile USB Networking (CDC/ECM Ethernet) Drivers (NDIS 5)"
+
+ssud.Service.DispName    = "SAMSUNG Mobile USB Networking (CDC Ethernet) Drivers (NDIS 5) (DEVGURU Ver.)"
+ssud.Service.Desc = "SAMSUNG Mobile USB Networking (CDC Ethernet) Drivers (NDIS 5) (DEVGURU Ver.)"
+
+DiskId1 = "SAMSUNG Mobile USB Networking (CDC Ethernet) Drivers (NDIS 5) Installation Disk #1"
+
+SSUD.EEM.DeviceDesc.ndis63  = "SAMSUNG Mobile USB Networking (CDC/EEM Ethernet) Drivers (NDIS 6.3)"
+SSUD.ECM.DeviceDesc.ndis63  = "SAMSUNG Mobile USB Networking (CDC/ECM Ethernet) Drivers (NDIS 6.3)"
+ssud.Service.DispName.ndis63    = "SAMSUNG Mobile USB Networking (CDC Ethernet) Drivers (NDIS 6.3) (DEVGURU Ver.)"
+ssud.Service.Desc.ndis63 = "SAMSUNG Mobile USB Networking (CDC Ethernet) Drivers (NDIS 6.3) (DEVGURU Ver.)"
+DiskId1.ndis63 = "SAMSUNG Mobile USB Networking (CDC Ethernet) Drivers (NDIS 6.3) Installation Disk #1"
+Promiscuous        = "Set the physical NIC to promiscuous mode"
+Promiscuous_Disable = "Disable"
+Promiscuous_Enable  = "Enable"
+
